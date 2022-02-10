@@ -1,6 +1,10 @@
+/*
+IF 9 ; Carnelos Duarte Joaquin Alejo */
+/*
+Al presionar el Botón, mostrar un número Random del 1 al 10 inclusive''*/
 function mostrar()
 {
-	//Genero el número RANDOM entre 1 y 10 
-	alert("ok");	
-
-}//FIN DE LA FUNCIÓN
+	let numero;
+	numero = Math.round(Math.random()*9+1);	
+	alert(numero);
+}
