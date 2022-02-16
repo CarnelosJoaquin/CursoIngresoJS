@@ -1,6 +1,20 @@
+/*
+Switch 8; Carnelos Duarte Joaquin Alejo */
+/*
+Al seleccionar un destino informar si hace FRIO o CALOR en ese destino*/
 function mostrar()
 {
-	var destinoIngresado =txtIdDestino.value;
-	alert(destinoIngresado);
+	let destino;
+	destino = document.getElementById("txtIdDestino").value;
 
-}//FIN DE LA FUNCIÓN
+	switch(destino){
+		case "Bariloche":
+		case "Ushuaia":
+		alert("En este lugar hace frío.");
+		break;
+		case "Cataratas":
+		case "Mar del plata":
+		alert("En este lugar hace calor.")
+		break;
+	}
+}
