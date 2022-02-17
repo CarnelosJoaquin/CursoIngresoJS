@@ -26,7 +26,6 @@ E.  Si el importe final con descuento suma más de $120  se debe sumar un 10% de
          case 2:
          descuento = 0;
          break;
-
          case 3:
          switch(marca){
             case "ArgentinaLuz":
@@ -39,7 +38,6 @@ E.  Si el importe final con descuento suma más de $120  se debe sumar un 10% de
             descuento = 5;
         }
         break;
-
         case 4:
         switch(marca){
             case "ArgentinaLuz":
@@ -50,7 +48,6 @@ E.  Si el importe final con descuento suma más de $120  se debe sumar un 10% de
             descuento = 20;
         }
         break;
-
         case 5:
         switch(marca){
             case "ArgentinaLuz":
@@ -60,7 +57,6 @@ E.  Si el importe final con descuento suma más de $120  se debe sumar un 10% de
             descuento = 30;
         }
         break;
-
         default:
         descuento = 50;
      }

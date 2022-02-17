@@ -13,7 +13,7 @@ function Sumar ()
 	let producto3;
 	let Suma;
 	let texto;
-	let resultado
+	let resultado;
 
 	producto1 = parseInt(document.getElementById("txtIdPrecioUno").value);
 	producto2 = parseInt(document.getElementById("txtIdPrecioDos").value);

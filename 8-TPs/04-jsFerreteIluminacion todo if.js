@@ -1,5 +1,5 @@
 /*
-TP 4 switch ; Carnelos Duarte Joaquin Alejo */
+TP 4 todo IF ; Carnelos Duarte Joaquin Alejo */
 /*4.    Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.  Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
@@ -10,60 +10,57 @@ E.  Si el importe final con descuento suma más de $120  se debe sumar un 10% de
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
- function CalcularPrecio () 
- {
-     let cantidad = parseInt(document.getElementById("txtIdCantidad").value);
-     let marca = document.getElementById("Marca").value;
-     let precioSinDescuentos = 35*cantidad;
-     let descuento;
-     let precioDescuento;
-     let precioFinal; 
- 
- 
-     switch(cantidad){
-         case 0:
-         case 1:
-         case 2:
-         descuento = 0;
-         break;
+function CalcularPrecio () 
+{
+    let cantidad = parseInt(document.getElementById("txtIdCantidad").value);
+    let marca = document.getElementById("Marca").value;
+    let precioLampara = 35;
+    let precioSinDescuentos = precioLampara*cantidad;
+    let precioDescuento = document.getElementById("txtIdprecioDescuento").value;
+    
+    if(cantidad < 3){
+        descuento = 0;
+    }
 
-         case 3:
-         switch(marca){
-            case "ArgentinaLuz":
-            descuento = 15;
-            break;
-            case "FelipeLamparas":
-            descuento = 10;
-            break;
-            default:
-            descuento = 5;
-        }
-        break;
+    if(cantidad >= 6){
+        descuento = 50;
+    }
 
-        case 4:
-        switch(marca){
-            case "ArgentinaLuz":
-            case "FelipeLamparas":
-            descuento = 25;
-            break;
-            default:
-            descuento = 20;
-        }
-        break;
-
-        case 5:
-        switch(marca){
-            case "ArgentinaLuz":
+    if(cantidad == 5){
+        if (marca == "ArgentinaLuz"){
             descuento = 40;
-            break;
-            default:
+        }
+        else{
             descuento = 30;
         }
-        break;
+    }
+    if(cantidad == 4){
+        if (marca == "ArgentinaLuz"&& marca == "FelipeLamparas"){
+            descuento = 25;
+        }
+        else{
+            descuento = 20;
+        }
+    }
 
-        default:
-        descuento = 50;
-     }
+    if(cantidad == 3){
+        if (marca == "ArgentinaLuz") {
+            descuento = 15;
+        }
+        else if(marca == "FelipeLamparas"){
+            descuento = 10;
+        }
+        else{
+            descuento = 5;
+        }
+    }
+
+    if(cantidad < 3){
+        descuento = 0;
+    }
+
+    
+
     precioFinal  = precioSinDescuentos - (precioSinDescuentos*descuento/100);
     precioDescuento = precioFinal;
     document.getElementById("txtIdprecioDescuento").value = precioDescuento;
@@ -74,4 +71,4 @@ E.  Si el importe final con descuento suma más de $120  se debe sumar un 10% de
     else{
         alert("Usted pago " + precioFinal + " $.");
     }
- }
+}

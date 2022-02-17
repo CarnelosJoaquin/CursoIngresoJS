@@ -1,5 +1,5 @@
 /*
-TP 4 switch ; Carnelos Duarte Joaquin Alejo */
+TP 4 switch(cantidad) if(marca); Carnelos Duarte Joaquin Alejo */
 /*4.    Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
 A.  Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
@@ -10,68 +10,65 @@ E.  Si el importe final con descuento suma más de $120  se debe sumar un 10% de
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
- function CalcularPrecio () 
- {
-     let cantidad = parseInt(document.getElementById("txtIdCantidad").value);
-     let marca = document.getElementById("Marca").value;
-     let precioSinDescuentos = 35*cantidad;
-     let descuento;
-     let precioDescuento;
-     let precioFinal; 
- 
- 
-     switch(cantidad){
-         case 0:
-         case 1:
-         case 2:
-         descuento = 0;
-         break;
+function CalcularPrecio () 
+{
+    let cantidad = parseInt(document.getElementById("txtIdCantidad").value);
+    let marca = document.getElementById("Marca").value;
+    let precioSinDescuentos = 35*cantidad;
+    let descuento;
+    let precioDescuento;
+    let precioFinal; 
 
-         case 3:
-         switch(marca){
-            case "ArgentinaLuz":
+
+    switch(cantidad){
+        case 0:
+        case 1:
+        case 2:
+        descuento = 0;
+        break;
+        /*D*/
+        case 3:
+        if (marca == "ArgentinaLuz") {
             descuento = 15;
-            break;
-            case "FelipeLamparas":
+        }
+        else if (marca == "FelipeLamparas"){
             descuento = 10;
-            break;
-            default:
+        }
+        else{
             descuento = 5;
         }
         break;
-
+        /*C*/
         case 4:
-        switch(marca){
-            case "ArgentinaLuz":
-            case "FelipeLamparas":
+        if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
             descuento = 25;
-            break;
-            default:
+        }
+        else{
             descuento = 20;
         }
         break;
-
+        /*B*/
         case 5:
-        switch(marca){
-            case "ArgentinaLuz":
+        if (marca == "ArgentinaLuz") {
             descuento = 40;
-            break;
-            default:
+        }
+        else{
             descuento = 30;
         }
         break;
-
+        /*A*/
         default:
         descuento = 50;
-     }
+    }
+
     precioFinal  = precioSinDescuentos - (precioSinDescuentos*descuento/100);
     precioDescuento = precioFinal;
     document.getElementById("txtIdprecioDescuento").value = precioDescuento;
 
-    if (precioFinal > 120){
+    if (precioFinal >120){
         alert("De "+ Math.round((precioFinal*1.1))+ "$ , usted pago "+ Math.round(precioFinal*0.10)+ "$ en ingresos brutos.");
     }
     else{
         alert("Usted pago " + precioFinal + " $.");
-    }
- }
+        }
+}
