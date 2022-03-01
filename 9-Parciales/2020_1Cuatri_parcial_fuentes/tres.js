@@ -1,3 +1,4 @@
+/*Parcial 2020 Ej3; Carnelos Duarte Joaquin Alejo*/
 /*Enunciado:
 Bienvenidos.
 En el ingreso a un viaje en avion nos solicitan nombre , edad, sexo("f" o "m") y estado civil("soltero", "casado" o "viudo")y temperatura corporal.
@@ -26,7 +27,7 @@ function mostrar()
 		nombre=prompt("Ingrese nombre real del pasajero.");
 		edad=parseInt(prompt("Ingrese años de edad."));
 		while(isNaN(edad)||(edad>100&&edad<0)){
-			edad(prompt("Ingrese años de edad reales del pasajero"));
+			edad=(prompt("Ingrese años de edad reales del pasajero"));
 		}
 		sexo=prompt("Ingrese sexo: f/m");
 		while(sexo!="f"&&sexo!="m"){

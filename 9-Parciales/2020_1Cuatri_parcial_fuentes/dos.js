@@ -1,3 +1,4 @@
+/*Parcial 2020 Ej2; Carnelos Duarte Joaquin Alejo*/
 /*Realizar el algoritmo que permita ingresar los datos de una compra productos de la construccion, hasta que el cliente quiera:
 Tipo validad("arena";"cal";"cemento")
 Cantidad de bolsas,
